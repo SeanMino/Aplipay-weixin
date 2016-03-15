@@ -1,11 +1,11 @@
 var AlipayConfig = {
     //↓↓↓↓↓↓↓↓↓↓请在这里配置您的基本信息↓↓↓↓↓↓↓↓↓↓↓↓↓↓↓
     // 合作身份者ID，以2088开头由16位纯数字组成的字符串
-    partner:"2088121068390664",
+    partner:"",
 // 交易安全检验码，由数字和字母组成的32位字符串
-    key:"fin1baxgie1cj0zl3djvpmpo5ndwz8yb",
+    key:"",
 // 签约支付宝账号或卖家收款支付宝帐户
-    seller_email:"zyeeda@gmail.com",
+    seller_email:"",
 // 支付宝服务器通知的页面 要用 http://格式的完整路径，不允许加?id:123这类自定义参数
 // 必须保证其地址能够在互联网中访问的到
     notify_url:"http://www.kingnoshop.com",
@@ -269,8 +269,8 @@ exports.alipayto = function (req, res) {
         var code_url = "";
         var err_code_des = "";
         var url = "https://api.mch.weixin.qq.com/pay/unifiedorder";
-        var appid = "wxf4e3d339e7d5fbab";
-        var mch_id = "1315648201";
+        var appid = "";
+        var mch_id = "";
         var notify_url = "http://kingnoshop.com";
         var out_trade_no = req.body.goods_id;
         var total_fee = (req.body.total_fee)*100;
@@ -445,7 +445,7 @@ function paysign(appid, body, attach, mch_id,nonce_str,notify_url, out_trade_no,
                 prestr = prestr + obj[0] + "=" + obj[1] + "&";
             }
         }
-    var key = "loAI6aiB9YfW1oKzE8ahfPBa07XSEIOs";
+    var key = "";
     prestr = prestr + '&key='+key;
     var crypto = require('crypto');
     return crypto.createHash('md5').update(prestr,'utf8').digest('hex').toUpperCase();
